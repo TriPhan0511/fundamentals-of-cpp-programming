@@ -2,12 +2,9 @@
 #include <string>
 
 int main(){
+    std::string name = "Kenny";
+    int age = 33;
+    char sex = 'M';  
     
+    std::cout << "Name: " << name << ", Age: " << age << ", Sex: " << sex << '\n';  
 }
-// int main(){
-//     // char greeting[] = "Good morning, everyone!"; // C Style Strings
-//     // std::string greeting("Aloha"); // std::string Class
-//     std::string greeting = "Aloha, everyone!"; // std::string Class
-//     std::cout << greeting;
-// }
-
