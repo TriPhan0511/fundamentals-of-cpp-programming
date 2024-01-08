@@ -70,7 +70,6 @@ int main()
     string monthInEnglish, monthInSpainish;
     cout << "Pelase enter the month and day as number: ";
     cin >> month >> day;
-    // Translate month into English
     monthInEnglish = translateMonthIntoEnglish(month);
     monthInSpainish = translateMonthIntoSpainish(month);
     // Display
