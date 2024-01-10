@@ -40,14 +40,29 @@ using std::cout;
 // The following code incorporates the time function 
 // to improve its randomness over executions.
 
+// int main()
+// {
+//     cout << static_cast<unsigned> (time(0));
+//     srand(static_cast<unsigned> (time(0)));
+//     for (int i = 0; i < 100; i++)
+//     {
+//         cout << rand() << " ";
+//     }
+
+//     // cout << RAND_MAX; // 32767
+// }
+
 int main()
 {
-    // cout << static_cast<unsigned> (time(0));
-    // srand(static_cast<unsigned> (time(0)));
-    // for (int i = 0; i < 100; i++)
-    // {
-    //     cout << rand() << " ";
-    // }
-
-    cout << RAND_MAX; // 32767
+    srand(static_cast<unsigned> (time(0)));
+    for (int i = 0; i < 100; i++)
+    {
+        // // Produces pseudorandom numbers in the range 0..99
+        // int r = rand() % 100; 
+        // Produces pseudorandom numbers in the range 1..100
+        int r = rand() % 100 + 1; 
+        // int r = rand();
+        cout << r << " ";
+    }
+    
 }
