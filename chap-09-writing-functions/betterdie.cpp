@@ -5,12 +5,19 @@
 using std::cout;
 using std::cin;
 
-void roll_die()
+// Initializes the randomness of the die
+void initialize_die()
 {
+    // Set the random seed value
     srand(static_cast<unsigned>(time(0)));
-    int r = rand() % 6 + 1; // Generate random number in the range 1..6
-    cout << "+-------+\n";
-    switch (r)
+}
+
+// Draw a picture of a die with number of spots
+// indicated spots is the number of spots on the top face
+void show_die(int spots)
+{
+    cout <<"+-------+\n";
+    switch (spots)
     {
         case 1:
             cout << "|       |\n";
@@ -44,20 +51,41 @@ void roll_die()
             break;
         
         default:
-            cout << " *** Error: illegal die value ***\n";
+            cout << " ***  Error: illegal die value ***\n";
             break;
     }
-    cout << "+-------+\n";
+    cout <<"+-------+\n";
 }
 
+// Returns a pseudorandom number in the range 1..6
+int roll()
+{
+    return rand() % 6 + 1;
+}
+
+// Simulate the roll of a die three times
 int main()
 {
     int num;
-    cout << "How many times do you want roll die? ";
+    cout << "How many times do you want to roll die? ";
     cin >> num;
+    // Initialize the die
+    initialize_die();
+    // Roll the die three times
     for (int i = 0; i < num; i++)
     {
-        roll_die();
+        show_die(roll());
     }
-    
 }
+
+// // Simulate the roll of a die three times
+// int main()
+// {
+//     // Initialize the die
+//     initialize_die();
+//     // Roll the die three times
+//     for (int i = 0; i < 3; i++)
+//     {
+//         show_die(roll());
+//     }
+// }
