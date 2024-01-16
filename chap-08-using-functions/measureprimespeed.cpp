@@ -7,7 +7,7 @@
 using std::cout;
 using std::cin;
 
-bool isPrime(int num)
+bool is_prime(int num)
 {
     if (num < 2)
     {
@@ -32,7 +32,7 @@ int main()
     clock_t start_time = clock(); // Record starting time
     for (int i = 2; i <= 500000; i++)
     {
-        if (isPrime(i))
+        if (is_prime(i))
         {
             cout << i << " ";
         }

@@ -6,7 +6,7 @@
 using std::cout;
 using std::cin;
 
-bool isPrime(int num)
+bool is_prime(int num)
 {
     if (num < 2)
     {
@@ -34,7 +34,7 @@ int main()
     cin >> max_value;
     for (int i = 2; i <= max_value; i++)
     {
-        if (isPrime(i))
+        if (is_prime(i))
         {
             cout << i << " ";
         }
