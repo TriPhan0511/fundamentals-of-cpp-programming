@@ -16,8 +16,16 @@ int main()
     // Print out the content of the array
     for (int i = 0; i < 10; i++)
     {
+        // Way 1:
         cout << *p << " "; // Print the element p points to
         p++; // Increment p so it points to the next element
+        
+        // Way 2:
+        // The array indexing operator ([]) can be used with pointers.
+        // cout << p[i] << " "; 
+        
+        // Way 3:
+        // cout << *(p + i) << " ";
     }
     
     
