@@ -22,7 +22,17 @@ void print_vector(const vector<int>& numbers)
     
 }
 
-// Solution 2: 
+// // Solution 1
+// void print(vector<int>& numbers)
+// {
+//     for (int num : numbers)
+//     {
+//         cout << num << " ";
+//     }
+    
+// }
+
+// Solution 2
 // Using const reference since the sum function needs only
 // look at the vector's content
 int sum(const vector<int>& numbers)
@@ -34,27 +44,6 @@ int sum(const vector<int>& numbers)
     }
     return result;
 }
-
-// // Solution 1
-// void print(vector<int>& numbers)
-// {
-//     for (int num : numbers)
-//     {
-//         cout << num << " ";
-//     }
-    
-// }
-
-// // Solution 1
-// int sum(vector<int>& numbers)
-// {
-//     int result = 0;
-//     for (int num : numbers)
-//     {
-//         result += num;
-//     }
-//     return result;
-// }
 
 void change_content(vector<int>& numbers, int num)
 {
