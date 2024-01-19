@@ -4,8 +4,14 @@
 using std::cout;
 using std::cin;
 
-// ChatGPT 3.5
-bool is_prime(int number) {
+/**
+ * is_prime(number)
+ *  Determines the primality of a given value
+ *  number an integer to test for primality
+ *  Returns true if n is prime; otherwise, returns false
+*/
+bool is_prime(int number)
+{
     if (number <= 1) {
         return false; // 0 and 1 are not prime numbers
     }
@@ -18,7 +24,8 @@ bool is_prime(int number) {
     return true; // If no divisors were found, the number is prime
 }
 
-int main() {
+int main()
+{
     // Print the prime numbers in the range 0..100
     for (int i = 0; i < 100; i++)
     {
@@ -30,14 +37,4 @@ int main() {
     }
 }
 
-// -------------------------------------------------------------
-// int main() {
-//     int num;
-//     cout << "Enter a number: ";
-//     cin >> num;
-//     if (is_prime(num)) {
-//         cout << num << " is a prime number." << '\n';
-//     } else {
-//         cout << num << " is not a prime number." << '\n';
-//     }
-// }
+

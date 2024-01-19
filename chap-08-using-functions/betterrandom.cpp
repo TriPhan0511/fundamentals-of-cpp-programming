@@ -1,7 +1,7 @@
 // C++ programmers can use two standard C functions for generating pseudorandom numbers: 
 // srand and rand:
 // void srand(unsigned)
-// int rand()
+// int rand() 
 
 
 

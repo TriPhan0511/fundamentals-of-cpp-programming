@@ -3,8 +3,8 @@
 
 using std::cout;
 
-// Make a random integer (ChatGPT 3.5)
-int generate_random_integer(int lowerBound, int upperBound) {
+int generate_random_integer(int lowerBound, int upperBound)
+{
     // Create a random number generator engine
     std::random_device rd;  // Will be used to obtain a seed for the random number engine
     std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
