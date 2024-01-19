@@ -1,3 +1,9 @@
+// When compiled and executed the following program is guaranteed to produce a run-time error.
+// Run-time errors are bad, but undefined behavior is worse because it can manifest itself as unpredictable
+// run-time errors and programs that behave differently across multiple platforms.
+
+// We can use try..catch to catch the exception.
+
 
 #include <iostream>
 #include <vector>
