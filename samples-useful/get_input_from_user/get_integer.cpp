@@ -43,25 +43,31 @@ are necessary:
 
 #include <iostream>
 #include <limits>
+#include <string>
 
 using std::cout;
 using std::cin;
+using std::string;
 
-int main()
+int get_int(string prompt = "Please enter an integer: ")
 {
-    int x;
-    // I hioo the user does the right thing!
-    cout << "Please enter an integer: ";
-    // Enter and remain in the loops as long as
-    // the user provides bad input
-    while (!(cin >> x))
+    int value;
+    cout << prompt;
+    while (!(cin >> value))
     {
         // Report error and re-prompt
-        cout << "Bad entry, please try again: ";
+        cout << "Bad entry! The value you entered is not an integer.\n"
+             << "Please try again: ";
         // Clean up the input stream
         cin.clear(); // Clear the error state of the stream
         // Empty the keyboard buffer
         cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
-    cout << "You enter " << x << '\n';
+    return value;
+}
+
+int main()
+{
+    int value = get_int();
+    cout << "You enter " << value << '\n';
 }
