@@ -47,26 +47,29 @@ void print_vector(const vector<int>& v)
  * save_vector(filename, v)
  *  Write the contents of the vector v.
  *  filename if name of text file created. 
- *      Any file by that name is overwritten.
+ *   Any file by that name is overwritten.
  *  v is a vector holding integers.
- *      v is unchanged by the function.
+ *   v is unchanged by the function.
 */
 void save_vector(const string& filename, const vector<int>& v)
 {
     // Open a text file for writing
-    ofstream out(filename);
-    if (out.good()) // Make sure the file was opened properly
+    // ofstream fout;
+    // fout.open(filename);
+    ofstream fout(filename);
+    if (fout.good()) // Make sure the file was opened properly
     {
         int len = v.size();
         for (int i = 0; i < len; i++)
         {
-            out << v[i] << " "; // Space delimited
+            fout << v[i] << " "; // Space delimited
         }
-        out << '\n';
+        fout << '\n';
+        cout << "Content were written to file.\n";
     }
     else
     {
-        cout << "Unable to save the file";
+        cout << "Unable to save the file\n";
     }
 }
 
@@ -80,12 +83,12 @@ void save_vector(const string& filename, const vector<int>& v)
 void load_vector(const string& filename, vector<int>& v)
 {
     // Open a text file for reading
-    ifstream in(filename);
-    if (in.good()) // Make sure the file was opened properly
+    ifstream fin(filename);
+    if (fin.good()) // Make sure the file was opened properly
     {
         v.clear(); // Start with empty vector
         int value;
-        while (in >> value) // Read until end of file
+        while (fin >> value) // Read until end of file
         {
             v.push_back(value);
         }
@@ -94,7 +97,6 @@ void load_vector(const string& filename, vector<int>& v)
     {
         cout << "Unable to load in the file\n";
     }
-    
 }
 
 int main()
