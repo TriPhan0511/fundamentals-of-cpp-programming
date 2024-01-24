@@ -60,6 +60,24 @@ bool less_than_by_balance(const Account& acc1, const Account& acc2) {
     return acc1.balance < acc2.balance;
 }
 
+// Sorts a bank account database into ascending order
+// The comp parameter determines the ordering
+void sort(vector<Account>& accounts,
+          bool (*comp)(const Account&, const Account&)) {
+    int size = accounts.size();
+    for (int i = 0; i < size - 1; i++) {
+        int smallest = i;
+        for (int  j = i + 1; j < size; j++) {
+            if (comp(accounts[j], accounts[smallest])) {
+                smallest = j;
+            }
+        }
+        if (smallest != i) {
+            swap(accounts[i], accounts[smallest]);
+        }
+    }
+}
+
 int main() {
     vector<Account> customers;
     char command;
