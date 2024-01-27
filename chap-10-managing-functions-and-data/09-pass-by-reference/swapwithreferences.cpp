@@ -9,7 +9,7 @@ using std::cout;
 *   It effectively interchanges the values
 *   of variables in the caller's context.
 */
-void swap(int& a, int& b)
+void swap_int(int& a, int& b)
 {
     int temp = a;
     a = b;
@@ -21,7 +21,7 @@ int main()
     int var1 = 5;
     int var2 = 19;
     cout << "var1 = " << var1 << ", var2 = " << var2 << '\n';
-    swap(var1, var2);
+    swap_int(var1, var2);
     cout << "var1 = " << var1 << ", var2 = " << var2 << '\n';
     // ->
     // var1 = 5, var2 = 19

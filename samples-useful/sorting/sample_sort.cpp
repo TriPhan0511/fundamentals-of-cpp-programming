@@ -14,7 +14,7 @@ void print(const vector<int>& v) {
     cout << '\n';
 }
 
-void swap(int& x, int& y) {
+void swap_int(int& x, int& y) {
     int temp = x;
     x = y;
     y = temp;
@@ -34,7 +34,7 @@ void sort_vector(vector<int>& v) {
         }
         if (smallest != i)
         {
-            swap(v[smallest], v[i]);
+            swap_int(v[smallest], v[i]);
         }
         print(v);
     }
@@ -50,7 +50,7 @@ void sort_vector_0(vector<int>& v) {
             }
         }
         if (smallest != i) {
-            swap(v[smallest], v[i]);
+            swap_int(v[smallest], v[i]);
         }
     }
 }
@@ -73,7 +73,7 @@ void sort_vector_and_display_steps(vector<int>& v) {
             }
         }
         if (smallest != i) {
-            swap(v[smallest], v[i]);
+            swap_int(v[smallest], v[i]);
         }
         cout << "    =>";
         print(v);
