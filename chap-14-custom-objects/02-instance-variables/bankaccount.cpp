@@ -24,7 +24,7 @@ void add_acount(vector<Account>& accounts) {
     string name;
     int id;
     double amount;
-    cout << "Enter name, id, balance: ";
+    cout << "Enter name, account number, and account balance: ";
     cin >> name >> id >> amount;
     account.name = name;
     account.id = id;
@@ -84,7 +84,7 @@ int main() {
     bool done = false;
     do
     {
-        cout << "[A]dd [P]rint [N]ame [I]D [B]alance [Q]uit: ";
+        cout << "[A]dd [N]ame [I]D [B]alance [Q]uit: ";
         cin >> command;
         switch (command) {
             case 'A':
@@ -100,14 +100,20 @@ int main() {
             case 'N':
             case 'n':
                 // Sort database by name
+                sort(customers, less_than_by_name);
+                print_accounts(customers);
                 break;
             case 'I':
             case 'i':
                 // Sort database by id (account number)
+                sort(customers, less_than_by_id);
+                print_accounts(customers);
                 break;
             case 'B':
             case 'b':
                 // Sort database by balance
+                sort(customers, less_than_by_balance);
+                print_accounts(customers);
                 break;
             case 'Q':
             case 'q':
