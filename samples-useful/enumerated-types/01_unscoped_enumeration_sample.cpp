@@ -5,7 +5,7 @@
 
 using std::cout;
 
-enum Color
+enum SignalColor
 {
     Red,
     Orange,
@@ -34,7 +34,7 @@ enum Weight
 
 int main()
 {
-    Color my_color = Orange;
+    SignalColor my_color = Orange;
     // cout << my_color; // 1
 
     if (my_color == Orange)
