@@ -24,12 +24,9 @@ int findLCM(int a, int b) {
     if (a == 0 || b == 0) {
         return 0; // LCM is undefined for zero
     }
-
     int gcd = findGCD(a, b);
-
     // LCM(a, b) = |a * b| / GCD(a, b)
     int lcm = std::abs(a * b) / gcd;
-
     return lcm;
 }
 

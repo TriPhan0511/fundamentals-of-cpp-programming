@@ -20,26 +20,25 @@ public:
     void setNumerator(int value);
     void setDenominator(int value);
     // Reduce a rational number
-    Rational reduce();
+    Rational reduce() const;
     // Overload the operator== function
     // to check whether two Rational objects are equal or not
-    bool operator==(const Rational& other);
+    bool operator==(const Rational& other) const;
     // Overload the operator!= function
     // to check whether two Rational objects are different or not
-    bool operator!=(const Rational& other);
+    bool operator!=(const Rational& other) const;
     // Overload the operator+ function
     // to compute addition of two Rational objects
-    Rational operator+(const Rational& other);
+    Rational operator+(const Rational& other) const;
     // Overload the operator+ function
     // to compute subtraction of two Rational objects
-    Rational operator-(const Rational& other);
+    Rational operator-(const Rational& other) const;
     // Overload the operator+ function
     // to compute multiplication of two Rational objects
-    Rational operator*(const Rational& other);
+    Rational operator*(const Rational& other) const;
     // Overload the operator+ function
     // to compute division of two Rational objects
-    Rational operator/(const Rational& other);
-
+    Rational operator/(const Rational& other) const;
 };
 
 #endif
