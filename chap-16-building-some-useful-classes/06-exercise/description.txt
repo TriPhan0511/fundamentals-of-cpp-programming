@@ -1,0 +1,33 @@
+Create a large unsigned integer type named BigUnsigned. BigUnsigned objects represent unsigned
+integers with arbitrary precision; that is, unlike the standard C++ unsigned integer primitive
+types, a BigUnsigned object can represent an unsigned integer as large as necessary. Unlike the
+floating-point types, a BigUnsigned value retains all its digits of precision.
+Internally, the BigUnsigned class should hold a std::vector of integers. Each integer in the
+vector is one of 0, 1, 2, 3, 4, 5, 6, 7, 8, or 9. Each element in the vector represents a digit in a place
+value within the integer; for example, if the internal vector contains the following elements in the
+following order:
+    4,9,1,1,4,3,0,5
+we would interpret the associated BigUnsigned object as the mathematical nonnegative integer
+49,114,305.
+
+Your BigUnsigned class implementation should provide the following features:
+
+* The class should provide a constructor that accepts no arguments that initializes the BigUnsigned
+object’s vector to contain a single element equal to zero.
+
+* The class should provide a constructor that accepts a single unsigned integer. This constructor
+should populate its internal vector with the appropriate elements to correspond to the value of
+its parameter.
+
+* The class should provide a constructor that accepts a BigUnsigned argument. Clients use
+this constructor to create a new BigUnsigned object from an exiting BigUnsigned object.
+
+* The class should provide a constructor that accepts a std::string object representing an
+integer. Clients use this constructor when they need to create a large integer whose value exceeds
+the range of unsigned long long. The string argument should contain only digits.
+
+* The class should provide access to a friend function named operator+ that adds two
+BigUnsigned objects and returns the BigUnsigned result.
+
+* The class should provide access to a friend function named operator<< that allows clients
+to print a BigUnsigned value as easily as a built-in integer type.
