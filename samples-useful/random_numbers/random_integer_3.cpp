@@ -10,9 +10,8 @@ int generate_random_integer(int lowerBound, int upperBound)
     std::mt19937 gen(rd()); // Standard mersenne_twister_engine seeded with rd()
     // Create a distribution for the random integer within the specified range
     std::uniform_int_distribution<int> distribution(lowerBound, upperBound);
-    // Generate a random integer
-    int randomNumber = distribution(gen);
-    return randomNumber;
+    // Generate a random integer and return
+    return distribution(gen);
 }
 
 int main()
