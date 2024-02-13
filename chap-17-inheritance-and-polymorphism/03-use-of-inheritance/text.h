@@ -5,14 +5,23 @@
 
 using std::string;
 
-class Test
+class Text
 {
     string text;
 public:
-    Test(const string& t);
+    // Create a Text object from a client-supplied string
+    Text(const string& t);
+
+    // Allow clients to see the text field
     virtual string get() const;
+
+    // Concatenate another string onto the
+    // back of the existing text
     virtual void append(const string& extra);
-    virtual ~Test()=default;
+
+    // Any class that has at least one virtual function should
+    // define a virtual destructor
+    virtual ~Text()=default;
 };
 
 #endif
