@@ -1,0 +1,9 @@
+A polymorphic method in C++ requires four key ingredients:
+
+    1. The method must appear in a class that is part of an inheritance hierarchy.
+    2. The method must declared virtual in the base class at the top of the
+       hierarchy.
+    3. Derived classes override the behavior of the inherited virtual methods as
+       needed.
+    4. Clients must invoke the method via a pointer (or reference) to an object, not
+       directly through the object itself.

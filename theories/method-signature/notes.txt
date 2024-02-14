@@ -1,0 +1,34 @@
+*** Question:
+What is method signature?
+
+*** Answer:
+In programming, the term "method signature" refers to the unique combination of 
+a method's name along with the number, types, and order of its parameters. 
+It provides a concise and unambiguous way to identify a specific method within 
+a class or a program.
+
+The method signature typically includes the following components:
+
+1. Method Name: The name of the method, which uniquely identifies it within its scope.
+
+2. Parameter Types: The types of parameters that the method accepts, 
+   specified in a specific order. This helps distinguish overloaded methods, 
+   which have the same name but different parameter types.
+
+3. Parameter Order: The order in which the parameters are listed in the method signature. 
+   Even if two methods have the same parameter types, they can be distinguished by the order 
+   of their parameters.
+
+4. The return type of a method is not considered part of its signature in most programming 
+   languages, as methods with the same name, parameter types, and order but different return 
+   types are not allowed (except in the case of overloaded operators in C++).
+
+EXAMPLE:
+
+void print(int x, int y); // Method signature: print(int, int)
+void print(float x, int y); // Method signature: print(float, int)
+void print(int x, float y); // Method signature: print(int, float)
+
+In the above example, each method has a unique signature based on its name and the types 
+and order of its parameters. This allows the compiler to differentiate between them when 
+they are called in the program.

@@ -1,0 +1,22 @@
+*** Question:
+In C++, why must we use pointers to objects rather than the objects themselves 
+to achieve polymorphism?
+
+*** Answer:
+In C++, polymorphism is achieved through inheritance and virtual functions. 
+When you have a base class pointer pointing to a derived class object, and 
+you call a virtual function through that pointer, the function that gets executed 
+is determined by the actual type of the object being pointed to at runtime. 
+This is known as runtime polymorphism or dynamic polymorphism.
+
+The main reason why pointers to objects are used rather than objects themselves 
+to achieve polymorphism is to enable this dynamic binding of functions at runtime. 
+When you use pointers, the compiler doesn't need to know the actual type of the object 
+being pointed to; it only needs to know the type of the pointer (which is the 
+base class type). Then, at runtime, the appropriate function is called based on 
+the actual type of the object being pointed to.
+
+If you were to use objects directly instead of pointers, the compiler would determine
+which function to call based on the declared type of the object. This is known as static binding 
+or compile-time polymorphism, and it doesn't provide the flexibility of selecting the 
+appropriate function at runtime based on the actual type of the object.
