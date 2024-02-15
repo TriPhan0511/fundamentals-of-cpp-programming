@@ -1,0 +1,3 @@
+#ifndef ALT_TEXT_H_INCLUDED
+#define ALT_TEXT_H_INCLUDED
+#endif
