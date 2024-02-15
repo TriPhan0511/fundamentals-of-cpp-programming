@@ -1,0 +1,46 @@
+*** Question:
+How to prevent multiple inclusion?
+
+*** Answer:
+In C++, you can prevent multiple inclusions of a header file using include guards or 
+#pragma once directive. These techniques ensure that a header file is included only 
+once in a translation unit, even if it's included multiple times indirectly through 
+other headers.
+
+1. Include Guards:
+Include guards are preprocessor directives that prevent the contents of a header file 
+from being included more than once in the same translation unit.
+
+Here's how you can use include guards in a header file:
+
+    #ifndef MYHEADER_H
+    #define MYHEADER_H
+
+    // Contents of the header file go here
+
+    #endif // MYHEADER_H
+
+Explanation:
+- #ifndef MYHEADER_H checks if the macro MYHEADER_H is not defined.
+- #define MYHEADER_H defines the macro MYHEADER_H.
+- All the contents of the header file go between #ifndef and #endif.
+- #endif // MYHEADER_H marks the end of the include guard.
+
+2. `#pragma once` Directive:
+Some compilers support the #pragma once directive, which is a non-standard way to 
+achieve the same result as include guards.
+
+Here's how you can use #pragma once:
+
+    #pragma once
+
+    // Contents of the header file go here
+
+Explanation:
+- `#pragma once` tells the compiler to include the header file only once in the 
+    translation unit.
+
+Using either include guards or #pragma once helps ensure that your header files are 
+included only once, regardless of how many times they are indirectly included through 
+other headers. This prevents issues such as duplicate definitions, multiple definitions,
+and compilation errors.

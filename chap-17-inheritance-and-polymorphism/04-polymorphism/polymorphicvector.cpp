@@ -10,23 +10,23 @@ using std::vector;
 
 int main()
 {
-    // vector<Text *> texts 
-    // {
-    //     new Text("Wow"),
-    //     new FancyText("Wee", "[", "]", "-"),
-    //     new FixedText,
-    //     new FancyText("Whoa", ":", ":", ":")
-    // };
+    // vector<Text*> texts;
+    // Text *t1 = new Text("Wow");
+    // Text *t2 = new FancyText("Wee", "[", "]", "-");
+    // Text *t3 = new FixedText;
+    // Text *t4 = new FancyText("Whoa", ":", ":", ":");
+    // texts.push_back(t1);
+    // texts.push_back(t2);
+    // texts.push_back(t3);
+    // texts.push_back(t4);
 
-    vector<Text*> texts;
-    Text *t1 = new Text("Wow");
-    Text *t2 = new FancyText("Wee", "[", "]", "-");
-    Text *t3 = new FixedText;
-    Text *t4 = new FancyText("Whoa", ":", ":", ":");
-    texts.push_back(t1);
-    texts.push_back(t2);
-    texts.push_back(t3);
-    texts.push_back(t4);
+    vector<Text *> texts 
+    {
+        new Text("Wow"),
+        new FancyText("Wee", "[", "]", "-"),
+        new FixedText,
+        new FancyText("Whoa", ":", ":", ":")
+    };
 
     for (auto t: texts)
     {
