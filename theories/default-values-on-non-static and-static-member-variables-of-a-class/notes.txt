@@ -1,0 +1,40 @@
+In C++, the default values of non-static and static member variables of a class 
+depend on how they are initialized. Here's a breakdown:
+
+** Default Values for Non-Static Member Variables:
+Non-static member variables are initialized per object instance. If you don't 
+explicitly initialize them in the class definition or in the constructor, 
+their default values depend on their data type:
+
+* Built-in Data Types (int, double, char, etc.): Non-static member variables of 
+built-in data types are not initialized by default. Their initial values are undefined,
+and they can contain garbage data until explicitly assigned a value.
+
+* Objects of Classes with Default Constructors: If a non-static member variable is 
+an object of another class that has a default constructor, the default constructor 
+of that class is called, and the member variable is initialized with the default
+values defined in the constructor.
+
+** Default Values for Static Member Variables:
+Static member variables belong to the class itself rather than individual objects. 
+They exist independently of any object of the class. If you don't explicitly 
+initialize them in the class definition or in a separate definition outside the 
+class, they are initialized to zero or a null pointer, depending on their type:
+
+* Built-in Data Types (int, double, char, etc.): Static member variables of built-in 
+data types are initialized to zero by default.
+
+* Pointers: Static member pointers are initialized to a null pointer (nullptr) 
+by default.
+
+* Objects of Classes with Default Constructors: If a static member variable is an 
+object of another class that has a default constructor, the default constructor of 
+that class is called, and the static member variable is initialized with the default 
+values defined in the constructor.
+
+
+It's important to note that relying on default initialization may lead to 
+unpredictable behavior, especially for non-static member variables of 
+built-in data types, as they may contain garbage values. Therefore, it's a 
+good practice to initialize member variables explicitly in the constructor 
+or provide default values in the class definition when appropriate.
