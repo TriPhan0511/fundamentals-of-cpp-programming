@@ -1,0 +1,9 @@
+Suppose you have class X and class Y that describe objects with similar functionality
+but different interfaces (different methods), and you need to treat a Y object
+as if it were an X object. You may be able to use the adapter design pattern as
+follows:
+
+    1. Derive a new class, Z, from X.
+    2. Store a pointer to the Y object in an instance of class Z.
+    3. Override methods in class Z to invoke the corresponding Y methods on the
+       enclosed Y object.

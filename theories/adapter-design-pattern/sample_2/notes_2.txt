@@ -1,0 +1,86 @@
+*** Question
+In C++, what is adapter design pattern?
+
+*** Answer
+The Adapter Design Pattern is a structural design pattern that 
+allows incompatible interfaces to work together. It acts as a 
+bridge between two incompatible interfaces by providing a wrapper 
+or adapter class that converts the interface of a class into 
+another interface that a client expects.
+
+The Adapter pattern involves the following components:
+
+    1. Target: This is the interface that the client expects to 
+        work with.
+    2. Adaptee: This is the existing interface that needs to be 
+        adapted to work with the client's interface.
+    3. Adapter: This is the class that implements the target 
+        interface and wraps the adaptee object. It translates 
+        calls from the client into calls to the adaptee.
+
+There are two common variations of the Adapter pattern:
+
+    * Class Adapter: In this variation, the adapter class inherits 
+        from both the target interface and the adaptee class. It 
+        provides the target interface and delegates calls to the 
+        adaptee class.
+
+    * Object Adapter: In this variation, the adapter class contains
+        an instance of the adaptee class. It implements the target 
+        interface and delegates calls to the adaptee object.
+
+Here's a simplified example of the Adapter pattern in C++:
+
+    #include <iostream>
+
+    // Target interface
+    class Target
+    {
+    public:
+        virtual void request() const = 0;
+    };
+
+    // Adaptee class
+    class Adaptee
+    {
+    public:
+        void specific_request() const
+        {
+            std::cout << "Adaptee's specific_request() called." << '\n';
+        }
+    };
+
+    // Object Adapter
+    class Adapter: public Target
+    {
+        Adaptee *adaptee;
+    public:
+        Adapter(Adaptee *a): adaptee(a) {}
+
+        void request() const override
+        {
+            adaptee->specific_request();
+        }
+    };
+
+    int main()
+    {
+        Adaptee *adaptee = new Adaptee();
+        Target *adapter = new Adapter(adaptee);
+        adapter->request(); // -> Adaptee's specific_request() called.
+
+        // Clean up memory
+        delete adaptee;
+        delete adapter;
+    }
+
+In this example:
+
+    * `Target` is the target interface that the client expects.
+    * `Adaptee` is the existing class with an incompatible interface.
+    * `Adapter` is the adapter class that implements the target 
+        interface and wraps the adaptee object.
+    * The `main()` function demonstrates how the adapter pattern can 
+        be used to make Adaptee work with the Target interface by 
+        creating an Adapter object that bridges the gap between 
+        the two interfaces.
