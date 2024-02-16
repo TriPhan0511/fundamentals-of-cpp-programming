@@ -10,9 +10,9 @@ public:
     // Length and width are equal in a square, so specify the
     // length only one side
     Square(double side);
-    // The inherited methods wirk as is; no need to
+    // The inherited methods work as is; no need to
     // change their behavior.
-    void display();
+    
 };
 
 #endif
