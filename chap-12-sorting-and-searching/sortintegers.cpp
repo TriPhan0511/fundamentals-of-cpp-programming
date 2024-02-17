@@ -74,7 +74,7 @@ using std::vector;
  *  Arranges the elements of a vector v into ascending order.
  *  v is a vector that contains integers.
 */
-void selection_sort(vector<int>& v) 
+void selection_sort_1(vector<int>& v) 
 {
     int size = v.size();
     for (int i = 0; i < size - 1; i++)
@@ -130,7 +130,7 @@ int main()
     vector<int> numbers{23, -3, 4, 215, 0, -3, 2, 23, 100, 88, -10};
     cout << "Before: ";
     print(numbers);
-    selection_sort(numbers);
+    selection_sort_1(numbers);
     cout << "After: ";
     print(numbers);
 }
