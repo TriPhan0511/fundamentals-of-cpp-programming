@@ -1,0 +1,75 @@
+*** Question
+In C++, what is destructor of a class and how to use it?
+
+*** Answer
+In C++, a destructor is a special member function of a class that is called automatically when an 
+object of that class is destroyed. The destructor has the same name as the class preceded by a 
+tilde (~) character. It is typically used to perform cleanup tasks such as releasing resources, 
+closing files, or deallocating memory allocated by the object.
+
+Here's the syntax for declaring a destructor:
+
+    class ClassName {
+    public:
+        // Constructor
+        ClassName();
+
+        // Destructor
+        ~ClassName();
+    };
+
+The destructor is called implicitly by the compiler when the lifetime of an object ends, either when 
+the object goes out of scope (for local objects) or when delete is called on a dynamically 
+allocated object. You do not call the destructor explicitly; it is automatically invoked by the 
+language runtime.
+
+Here's an example demonstrating the use of a destructor:
+
+    #include <iostream>
+
+    class MyClass
+    {
+    public:
+        // Constructor
+        MyClass()
+        {
+            std::cout << "Contructor called\n";
+        }
+
+        // Destructor
+        ~MyClass()
+        {
+            std::cout << "Destructor called\n";
+        }
+    };
+
+    int main()
+    {
+        std::cout << '\n';
+        std::cout << "Creating object..." << '\n';
+        MyClass obj; // Constructor called
+
+        std::cout << "Object is about to be destroyed..." << '\n';
+        // Destructor called when obj goes out of scope at the end of main()
+
+        // -> Output:
+        // Creating object...
+        // Contructor called
+        // Object is about to be destroyed...
+        // Destructor called
+    }
+
+In this example:
+
+    * We define a class MyClass with a constructor and a destructor.
+
+    * When the object obj is created in the main() function, the constructor is called, 
+        and it prints "Constructor called".
+
+    *When obj goes out of scope at the end of main(), the destructor is called 
+        automatically by the compiler, and it prints "Destructor called".
+
+Destructors are essential for proper resource management in C++ and are used to release 
+resources acquired by the object during its lifetime. It's important to ensure that 
+destructors release resources properly to avoid memory leaks or resource leaks in your 
+program.        

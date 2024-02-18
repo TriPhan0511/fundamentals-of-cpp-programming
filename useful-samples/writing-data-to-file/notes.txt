@@ -1,0 +1,8 @@
+*** Question
+In C++, how to wite data to a file?
+
+*** Answer
+In C++, you can write data to a file using the std::ofstream class 
+from the <fstream> header. 
+
+Here's a simple example demonstrating how to write data to a file:
