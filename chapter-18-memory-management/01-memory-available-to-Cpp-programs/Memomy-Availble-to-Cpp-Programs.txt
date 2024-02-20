@@ -1,0 +1,72 @@
+/*
+
+A modern operating system reserves a section of memory for an executing program. This allows the operating
+system to manage multiple program executions simultaneously. Different operating systems layout the
+memory of executing programs in different ways, but the layout will include the following four sections:
+
+    * Code. The code section of memory holds the program’s compiled executable instructions. The contents
+        of the code section should never change while the program executes, and the size of the code
+        segment does not change during the program’s execution.
+
+    * Data. The data section of memory contains global variables (see Section 10.1) and persistent local
+        variables (static locals, see Section 10.2). The variables in the data section exist for the life of
+        the executing program, but, unless they are constants (see Section 3.6), the executing program may
+        freely change their values. Even though the values stored in the variables found in the data segment
+        may change during the program’s execution, the size of the data segment does not change while the
+        program executes. This is because the program’s source code precisely defines the number of global
+        and static local variables. The compiler can compute the exact size of the data segment.
+
+    * Heap. The heap is where an executing program obtains dynamic memory. The new operator gets
+        its memory from the heap, and delete returns previously allocated memory back to the heap. The
+        size of the heap grows and shrinks during the program’s execution as the program allocates and
+        deallocates dynamic memory using new and delete.
+
+    * Stack. The stack is where local variables and function parameters live. Space for local variables and
+        parameters appears when a function is called and disappears when the function returns. The size of
+        the stack grows and shrinks during the program’s execution as various functions execute.
+
+Operating systems generally limit the size of the stack. Deep recursion can consume a considerable
+amount of stack space. An improperly written recursive function, for example one that omits the base case 
+and thus exhibits “infinite” recursion, will consume all the space available on the stack. Such a situation
+is known as a stack overflow. Modern operating systems will terminate a process that consumes all of its
+stack space, but on some embedded systems this stack overflow may go undetected. Heap space typically is
+much more plentiful, and operating systems can use virtual memory to provide a executing program more
+space than is available in real memory. The extra space for virtual memory comes from a disk drive, and the
+operating system shuttles data from disk to real memory as needed by the executing program. Programs that
+use a lot of virtual memory run much slower than programs that use little virtual memory. Virtual memory
+is not unlimited, however, so a program with a memory leak eventually can run out of memory.
+
+Because of the way function and method calls and their subsequent returns work, the stack grows and
+shrinks in a very regular fashion. It expands during a function call to make room for the executing function’s
+local variables and parameters (and it expands even more if that function calls other functions), and when
+the function returns, the stack contracts back to the original size it had before the function invocation.
+Variables are removed from the stack in the reverse order of their creation on the stack. The stack always
+consists of one contiguous chunk of memory with no areas of unavailable space within that chunk.
+
+The heap grows and shrinks as the program executes new and delete, but its expansion and contraction
+is not regular. One function may allocate an object or dynamic array with new, and a different function
+may much later in the program’s execution deallocate the object or array with delete. An executing
+program may delete dynamically allocated memory in a very different order from its allocation. This
+means that memory allocated on the heap is usually not contiguous; that is, space for deallocated objects
+can be interspersed with space for allocated objects. The the available memory on the heap thus can become
+fragmented during the program’s execution.
+
+Global variables and static local variables in the data segment live for the life of the executing program.
+The run-time environment initializes globals before main begins executing and cleans them up when
+main returns. The run-time environment initializes static locals during the function’s or method’s first
+invocation. Non-static local variables on the stack exist only when a function is executing. If a program
+calls and returns from the same function 20 times, that function’s local variables appear and disappear 20
+times. An executing program can create dynamic memory as needed, hold onto it as long as necessary, and
+finally release it when it is no longer needed.
+
+The quantity of global data is fixed when the program begins executing, and stack data is not persistent
+for the life of the executing program. This means an executing program that must manage a varying amount
+of data for an arbitrary amount of time must use the heap as a source of memory for that data. The run-time
+environment automatically manages global and local memory. Unfortunately, programmers must write code
+that manually manages heap data. The problem is this: Manual memory management in all but very simple
+systems turns out to be a difficult task. Development of large software systems with C++ in the early days
+often was a frustrating experience.
+
+
+
+*/
