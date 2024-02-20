@@ -1,0 +1,16 @@
+Vectors support a number of methods, but we will focus on seven of them:
+
+• push_back—inserts a new element onto the back of a vector
+
+• pop_back—removes the last element from a vector
+
+• operator[]—provides access to the value stored at a given index within the vector
+
+• at—provides bounds-checking access to the value stored at a given position within the vector
+
+• size—returns the number of values currently stored in the vector
+
+• empty—returns true if the vector contains no elements; returns false if the vector contains one or
+    more elements
+
+• clear—makes the vector empty.
