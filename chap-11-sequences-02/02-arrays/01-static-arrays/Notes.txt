@@ -1,0 +1,26 @@
+***** NOTE 1 *****
+As a general rule, all functions that accept array parameters should declare the
+array contents as const unless they need to modify the elements of the array. For
+example, use:
+
+    int sum(const int a[], int n)
+
+rather than:
+
+    int sum(int a[], int n)
+    
+if the sum function must be able to examine the contents of the array but is not
+intended to modify its contents.
+
+***** NOTE 2 *****
+C++ does not directly support empty arrays. A physical array must contain at least 
+one element. Sometimes it is appropriate to consider an array that is conceptually empty; 
+for example, what if we wish to pass an “empty” array to the sum function? 
+We can pass 0 as the second parameter since an empty array contains no elements, 
+but what should we pass as the first parameter? Any array will do, but there is no need create 
+an real array when none truly is needed. Instead, we may use nullptr:
+
+    quanitity = sum(nullptr, 0);
+
+If you scrutinize the body of the sum function, you will see that this call will assign to
+quantity the correct answer, namely zero.
