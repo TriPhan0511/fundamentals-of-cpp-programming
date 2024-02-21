@@ -1,8 +1,10 @@
 #include <iostream>
+#include <vector>
 #include <cmath> // For sqrt()
 
 using std::cout;
 using std::cin;
+using std::vector;
 
 /**
  * is_prime(number)
@@ -24,17 +26,38 @@ bool is_prime(int number)
     return true; // If no divisors were found, the number is prime
 }
 
-int main()
+// Overload the operator<< function
+std::ostream& operator<<(std::ostream& os, const vector<int> v)
 {
-    // Print the prime numbers in the range 0..100
-    for (int i = 0; i < 100; i++)
+    for (auto e : v)
+    {
+        os << e << " ";
+    }
+    os << '\n';
+    return os;
+}
+
+vector<int> primes(int begin, int end)
+{
+    vector<int> v;
+    for (int i = begin; i <= end; i++)
     {
         if (is_prime(i))
         {
-            cout << i << " ";
+            v.push_back(i);
         }
-        
     }
+    return v;    
 }
 
+int main()
+{
+    cout << '\n';
+
+    int low;
+    int high;
+    cout << "Please enter lowest and highest values in the range: ";
+    cin >> low >> high;
+    cout << primes(low, high);
+}
 
