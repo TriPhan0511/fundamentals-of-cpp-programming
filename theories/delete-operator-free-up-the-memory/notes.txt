@@ -1,0 +1,63 @@
+1. Free up the dynamic memory allocated for an array
+    
+    int *p = new int[10];
+    // Do something...
+    delete [] p; // Clean up the memory
+
+2. Free up the single dynamically allocated object
+
+    class Account
+    {
+        std::string name;
+        int id;
+        double balance;
+    public:
+        Account(std:string n, int number, double amount):
+            name(n), id(number), balance(amount) {}
+        void Account::display()
+        {
+            std::cout << "{ " << name << ", " << id 
+                << ", " << balance  << " }";
+        }
+    };
+
+    int main()
+    {
+        Account *p = new Account("Joe", 400, 1300.0);
+        p->display();
+        delete p; // Free up the memory
+    }
+
+3. Free up the dynamic memory held by each objects in a vector
+
+    int main()
+    {
+        std::string name;
+        int id;
+        double balance;    
+        vector<Account *> accts(2);
+        int size = accts.size();
+        for (int i = 0; i < size; i++)
+        {
+            cout << "Enter name, id, balance: ";
+            cin >> name >> id >> balance;
+            accts[i] = new Account(name, id, balance);
+        }
+
+        // Print the contents of the vector accts
+        for (const auto p: accts)
+        {
+            p->display();
+            cout << '\n';
+        }
+        
+        // Free up the memory
+        for (auto e : accts)
+        {
+            delete e;
+        }
+        // for (int i = 0; i < size; i++)
+        // {
+        //     delete accts[i];
+        // }
+    }   
