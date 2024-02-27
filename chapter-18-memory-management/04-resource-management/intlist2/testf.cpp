@@ -5,7 +5,7 @@ using std::cout;
 
 void f()
 {
-    IntList3 my_list;
+    IntList4 my_list;
     my_list.insert(22);
     my_list.insert(5);
     my_list.insert(-44);
@@ -16,7 +16,7 @@ void f()
 // Use pointer
 void f2()
 {
-    IntList3 *my_list = new IntList3;
+    IntList4 *my_list = new IntList4;
     my_list->insert(22);
     my_list->insert(5);
     my_list->insert(-44);

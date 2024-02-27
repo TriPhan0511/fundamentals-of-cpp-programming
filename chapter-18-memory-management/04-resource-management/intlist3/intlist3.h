@@ -13,7 +13,6 @@ class IntList3
     Node *head; // Points to the first element in the list
     Node *tail; // Points to the last element in the list
     int len; // The number of elements in the list
-    // int size; // The number of elements in the list
 public:
     // The constructor makes an initially empty list.
     IntList3();
