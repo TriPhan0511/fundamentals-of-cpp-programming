@@ -1,8 +1,6 @@
 #include <iostream>
 #include "intlist3.h"
 
-// Private IntList3 operations
-
 // Node constructor
 IntList3::Node::Node(int n): data(n), next(nullptr) 
 {
@@ -21,8 +19,6 @@ IntList3::Node::~Node()
         << " (" << reinterpret_cast<uintptr_t>(this) << ")\n";
 }
 
-// Public IntList3 operations
-
 // The constructor makes an initially empty list
 // The list is empty when head and tail are null.
 // The list's length initially is zero.
@@ -31,7 +27,7 @@ IntList3::IntList3(): head(nullptr), tail(nullptr), len(0) {}
 // The destructor deallocates the memory held by the list
 IntList3::~IntList3()
 {
-    // std::cout << "The destructor is called"; // Testing
+    // std::cout << "The destructor is called\n"; // Testing
     clear(); // Free up the space held by the nodes in the list
 }
 
